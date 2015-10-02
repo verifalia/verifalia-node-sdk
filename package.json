@@ -1,0 +1,23 @@
+{
+  "name": "verifalia",
+  "version": "1.0.0",
+  "description": "Verifalia email validation library for Node.js",
+  "homepage": "http://verifalia.com",
+  "main": "index.js",
+  "keywords": ["email", "validation", "verification", "free", "verifalia", "service", "list", "cleaning", "scrubbing", "e-mail", "syntax", "smtp", "disposable", "mailbox"],
+  "author": "Verifalia <support@verifalia.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/verifalia/verifalia-node-sdk"
+  },  
+  "dependencies": {
+    "request": "2.x.x"
+  },
+  "bugs": {
+    "url": "https://github.com/verifalia/verifalia-node-sdk/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.8.0"
+  }
+}
