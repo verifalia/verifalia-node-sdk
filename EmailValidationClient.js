@@ -9,10 +9,8 @@ EmailValidationClient.prototype.VALIDATION_STATUS_PENDING = 'pending';
 EmailValidationClient.prototype.VALIDATION_STATUS_COMPLETED = 'completed';
 
 EmailValidationClient.prototype.submit = function(emailAddresses, options) {
-	var callback = options instanceof Function
-		? options
-		: (options && options.callback) || ()=>{};
-		
+	var callback = options instanceof Function ? options : (options && options.callback) || (()=>{});
+
 	var completionOptions = (options && options.waitForCompletion);
 	
 	if (typeof emailAddresses === 'string' || emailAddresses instanceof String) {
