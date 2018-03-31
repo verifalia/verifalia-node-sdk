@@ -1,7 +1,7 @@
 Verifalia REST API - SDK and helper library for Node.js
 =======================================================
 
-Verifalia provides a simple HTTPS-based API for validating email addresses and checking whether they are deliverable or not. Learn more at http://verifalia.com
+Verifalia provides a simple HTTPS-based API for validating email addresses and checking whether they are deliverable or not. Learn more at https://verifalia.com
 
 ## Adding Verifalia REST API support to your Node.js project ##
 
@@ -17,8 +17,8 @@ The example below shows how to have your Node.js application to submit and valid
 
 ```javascript
 // Initializes and configures the Verifalia SDK, using your sub-account SID and auth
-// token. Sub-accounts can be managed through the Verifalia dashboard, in the
-// clients area.
+// token. Sub-accounts and their credentials can be created and managed through the
+// Verifalia dashboard, at https://verifalia.com/client-area
 
 var verifalia = require('verifalia')
 	.client('YOUR-ACCOUNT-SID', 'YOUR-AUTH-TOKEN');
@@ -134,4 +134,4 @@ MIT
 
 ## Support
 
-Request help and support at [verifalia.com/support/contact-us](http://verifalia.com/support/contact-us).
+Request help and support at [verifalia.com/support/contact-us](https://verifalia.com/support/contact-us).

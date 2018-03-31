@@ -1,8 +1,8 @@
 {
   "name": "verifalia",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Verifalia email validation library for Node.js",
-  "homepage": "http://verifalia.com",
+  "homepage": "https://verifalia.com",
   "main": "index.js",
   "keywords": [
     "email",
