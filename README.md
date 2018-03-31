@@ -13,7 +13,7 @@ $ npm install verifalia
 
 ### Validate an email address
 
-The example below shows how to have your Node.js application to submit and validate a couple of email addresses using the Verifalia helper library for Node.js:
+The example below shows how to have your Node.js application to submit and validate an email address using the Verifalia helper library for Node.js:
 
 ```javascript
 // Initializes and configures the Verifalia SDK, using your sub-account SID and auth
@@ -28,32 +28,32 @@ var verifalia = require('verifalia')
 verifalia
 	.emailValidations
 	.submit('alice@example.com',
-	{
-		// The callback function is called at the completion of the validation
-	
-		callback: (error, data) => {
-			if (error) {
-				console.error('Error:', error);
-				return;
-			}
+		{
+			// The callback function is called at the completion of the validation
 		
-			// Displays the validation results
+			callback: (error, data) => {
+				if (error) {
+					console.error('Error:', error);
+					return;
+				}
 			
-			console.log('Results:', data);
-		},
-		
-		// Waits until the engine completes the email validation, with a default
-		// polling interval of 5 seconds.
-		
-		waitForCompletion: true
-		
-		// To change the polling interval, just pass an object along with a
-		// "pollingInterval", in milliseconds:
-		//
-		// waitForCompletion: {
-		//     pollingInterval: 100
-		// }
-	});
+				// Displays the validation results
+				
+				console.log('Results:', data);
+			},
+			
+			// Waits until the engine completes the email validation, with a default
+			// polling interval of 5 seconds.
+			
+			waitForCompletion: true
+			
+			// To change the polling interval, just pass an object along with a
+			// "pollingInterval", in milliseconds:
+			//
+			// waitForCompletion: {
+			//     pollingInterval: 100
+			// }
+		});
 ```
 
 #### Validate a list of email addresses
@@ -66,8 +66,8 @@ The `submit()` function accepts a single email address, as shown above, or an ar
 verifalia
 	.emailValidations
 	.submit([ 'alice@example.com', 'bob@example.net' ],
-	{
-		callback: (error, data) => {
+		{
+			callback: (error, data) => {
 
 // ...
 ```
@@ -84,30 +84,29 @@ Instead of relying on this automatic polling behavior, you may even manually que
 verifalia
 	.emailValidations
 	.submit('alice@example.com',
+		// Since we don't want to wait for the completion of the batch, we can just
+		// pass a callback here:
 
-	// Since we don't want to wait for the completion of the batch, we can just
-	// pass a callback here:
-
-	(error, data) => {
-		if (error) {
-			console.error('Error:', error);
-			return;
-		}
-	
-		// Displays the uniqueID of the batch, which can be used to later
-		// retrieve the results from Verifalia.
+		(error, data) => {
+			if (error) {
+				console.error('Error:', error);
+				return;
+			}
 		
-		if (data.status == verifalia.emailValidations.VALIDATION_STATUS_COMPLETED) {
-			// The batch has been completed in a single submit() call
-		
-			console.log(data);
-			return;
-		}
-		
-		// TODO: Schedule a retrieval of the results, by way of the query() function
-		
-		console.log(data.uniqueID);
-	});
+			// Displays the uniqueID of the batch, which can be used to later
+			// retrieve the results from Verifalia.
+			
+			if (data.status == verifalia.emailValidations.VALIDATION_STATUS_COMPLETED) {
+				// The batch has been completed in a single submit() call
+			
+				console.log(data);
+				return;
+			}
+			
+			// TODO: Schedule a retrieval of the results, by way of the query() function
+			
+			console.log(data.uniqueID);
+		});
 ```
 
 #### Retrieve the Submit a validation without waiting for its completion
@@ -120,21 +119,21 @@ To retrieve the results of a batch you have submitted as shown above, you can pa
 verifalia
 	.emailValidations
 	.query(data.uniqueID, // Assumes we have data.uniqueID from the previous sample
-	{
-		// The callback function is called at the completion of the validation
-	
-		callback: (error, data) => {
-			if (error) {
-				console.error('Error:', error);
-				return;
-			}
+		{
+			// The callback function is called at the completion of the validation
 		
-			// Displays the validation results
+			callback: (error, data) => {
+				if (error) {
+					console.error('Error:', error);
+					return;
+				}
 			
-			console.log(data);
-		},
-		waitForCompletion: true
-	});
+				// Displays the validation results
+				
+				console.log(data);
+			},
+			waitForCompletion: true
+		});
 ```
 
 The `query()` function shares the same semantic of `submit()`, so you can avoid waiting for the completion of the job here as well.
