@@ -9,10 +9,8 @@ EmailValidationClient.prototype.VALIDATION_STATUS_PENDING = 'pending';
 EmailValidationClient.prototype.VALIDATION_STATUS_COMPLETED = 'completed';
 
 EmailValidationClient.prototype.submit = function(emailAddresses, options) {
-	var callback = options instanceof Function
-		? options
-		: (options && options.callback) || ()=>{};
-		
+	var callback = options instanceof Function ? options : (options && options.callback) || (()=>{});
+
 	var completionOptions = (options && options.waitForCompletion);
 	
 	if (typeof emailAddresses === 'string' || emailAddresses instanceof String) {
@@ -136,7 +134,7 @@ var queryUntilDone = function($this, uniqueID, completionOptions, callback) {
 EmailValidationClient.prototype.query = function(uniqueID, options) {
 	var callback = options instanceof Function
 		? options
-		: (options && options.callback) || ()=>{};
+		: (options && options.callback) || (()=>{});
 		
 	var completionOptions = (options && options.waitForCompletion);
 
@@ -151,7 +149,7 @@ EmailValidationClient.prototype.query = function(uniqueID, options) {
 EmailValidationClient.prototype.delete = function(uniqueID, options) {
 	var callback = options instanceof Function
 		? options
-		: (options && options.callback) || ()=>{};
+		: (options && options.callback) || (()=>{});
 
 	request({
 			url: this.restClient.baseUrl + this.restClient.apiVersion + '/email-validations/' + uniqueID,
