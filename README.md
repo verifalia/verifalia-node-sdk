@@ -32,14 +32,27 @@ verifalia
 		// The callback function is called at the completion of the validation
 	
 		callback: (error, data) => {
+			if (error) {
+				console.error('Error:', error);
+				return;
+			}
+		
 			// Displays the validation results
 			
-			console.log(data);
+			console.log('Results:', data);
 		},
 		
-		// Waits untile the engine completes the validation
+		// Waits until the engine completes the email validation, with a default
+		// polling interval of 5 seconds.
 		
 		waitForCompletion: true
+		
+		// To change the polling interval, just pass an object along with a
+		// "pollingInterval", in milliseconds:
+		//
+		// waitForCompletion: {
+		//     pollingInterval: 100
+		// }
 	});
 ```
 
@@ -76,6 +89,11 @@ verifalia
 	// pass a callback here:
 
 	(error, data) => {
+		if (error) {
+			console.error('Error:', error);
+			return;
+		}
+	
 		// Displays the uniqueID of the batch, which can be used to later
 		// retrieve the results from Verifalia.
 		
@@ -106,6 +124,11 @@ verifalia
 		// The callback function is called at the completion of the validation
 	
 		callback: (error, data) => {
+			if (error) {
+				console.error('Error:', error);
+				return;
+			}
+		
 			// Displays the validation results
 			
 			console.log(data);
