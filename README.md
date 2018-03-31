@@ -134,4 +134,4 @@ MIT
 
 ## Support
 
-Request help and support at [verifalia.com/support/contact-us](https://verifalia.com/support/contact-us).
+Request help and support at [https://verifalia.com/support/contact-us](https://verifalia.com/support/contact-us).
