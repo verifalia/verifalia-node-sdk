@@ -1,3 +1,5 @@
+![Verifalia API](https://img.shields.io/badge/Verifalia%20API-v1.1-green)
+
 Verifalia REST API - SDK and helper library for Node.js
 =======================================================
 
