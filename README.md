@@ -1,5 +1,7 @@
 ![Verifalia API](https://img.shields.io/badge/Verifalia%20API-v1.1-green)
 
+> **OBSOLETE**: This SDK has now been merged to our [Verifalia SDK for Javascript](https://github.com/verifalia/verifalia-js-sdk). This repository is thus obsolete and should be used for historical purposes only.
+
 Verifalia REST API - SDK and helper library for Node.js
 =======================================================
 
